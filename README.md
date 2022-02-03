@@ -47,7 +47,6 @@ sudo -i -u postgres
 CREATE USER nomedousuario SUPERUSER INHERIT CREATEDB CREATEROLE; 
 ALTER USER nomedousuario PASSWORD 'senha';
 ```
-teste
 #
 ### 04 - Init PHPStorm
 #### 4.1 - Doing Download
@@ -95,7 +94,6 @@ sudo apt install github-desktop
 ```sh
 composer create-project laravel/laravel {nome_projeto}
 ```
-dfsfdfdsf
 #
 ### 02 - Init Tailwind
 ```sh
