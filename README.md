@@ -17,6 +17,7 @@ wget -qO - https://packages.sury.org/php/apt.gpg | sudo apt-key add -
 ```sh
 sudo reboot 
 sudo apt update
+sudo apt upgrade
 ```
 #### 1.4 - Install PHP and extension
 ```sh
