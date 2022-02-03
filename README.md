@@ -1,21 +1,25 @@
 # Installing-in-Deepin
-Passo a Passo de Instala;'ao, para inicio de um novo projeto no Sistema Linux Deepin
-Te
+Passo a Passo de Instalação, para inicio de um novo projeto no Sistema Linux Deepin
+
 ### 01 - Init PHP
 #### 1.1 - Updating System
 ```sh
 sudo apt update
 sudo apt -y upgrade
-sudo reboot
 ```
 #### 1.2 - Install Repository 
-```shss
+```sh
 sudo apt install -y software-properties-common
 echo "deb https://packages.sury.org/php/ buster main" | sudo tee /etc/apt/sources.list.d/sury-php.list
 wget -qO - https://packages.sury.org/php/apt.gpg | sudo apt-key add -
 ```
-#### 1.3 - Install PHP and extension
-```shsss
+#### 1.3 Reboot System 
+```sh
+sudo reboot 
+sudo apt update
+```
+#### 1.4 - Install PHP and extension
+```sh
 sudo apt install php8.1
 sudo apt install php8.1-{mysql,intl,ldap,gd,cli,bz2,curl,mbstring,pgsql,opcache,soap,cgi,xml}
 ```
@@ -42,6 +46,7 @@ sudo -i -u postgres
 CREATE USER nomedousuario SUPERUSER INHERIT CREATEDB CREATEROLE; 
 ALTER USER nomedousuario PASSWORD 'senha';
 ```
+teste
 #
 ### 04 - Init PHPStorm
 #### 4.1 - Doing Download
@@ -55,7 +60,7 @@ cd /opt/PhpStorm/bin
 ```
 #### 4.3 - Creating shortcut
 ```sh
-Na tela de boas-vindas, clique em Configurar | Criar entrada na área de trabalho
+Na tela de boas-vindas do PHPStorm, clique em Configurar | Criar entrada na área de trabalho
 ```
 #
 ### 05 - Init NVM
