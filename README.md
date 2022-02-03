@@ -1,6 +1,6 @@
 # Installing-in-Deepin
 Passo a Passo de Instala;'ao, para inicio de um novo projeto no Sistema Linux Deepin
-
+Te
 ### 01 - Init PHP
 #### 1.1 - Updating System
 ```sh
