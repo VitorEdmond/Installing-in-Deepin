@@ -15,7 +15,7 @@ echo "deb https://packages.sury.org/php/ buster main" | sudo tee /etc/apt/source
 wget -qO - https://packages.sury.org/php/apt.gpg | sudo apt-key add -
 ```
 #### 1.3 - Install PHP and extension
-```sh
+```shsss
 sudo apt install php8.1
 sudo apt install php8.1-{mysql,intl,ldap,gd,cli,bz2,curl,mbstring,pgsql,opcache,soap,cgi,xml}
 ```
