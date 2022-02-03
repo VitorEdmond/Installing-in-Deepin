@@ -9,7 +9,7 @@ sudo apt -y upgrade
 sudo reboot
 ```
 #### 1.2 - Install Repository 
-```sh
+```shss
 sudo apt install -y software-properties-common
 echo "deb https://packages.sury.org/php/ buster main" | sudo tee /etc/apt/sources.list.d/sury-php.list
 wget -qO - https://packages.sury.org/php/apt.gpg | sudo apt-key add -
