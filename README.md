@@ -73,7 +73,69 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 nvm install node
 nvm install-latest-npm
 ```
-### Install Git
+#
+### 06 - Init NGINX
+#### 6.1 - Install NGINX
+```sh
+sudo apt install nginx-full
+```
+#### 6.2 - Configure NGINX
+##### 6.2.1 - Acesse o arquivo default em sites enable
+```sh
+sudo nano /etc/nginx/sites-enable/
+```
+##### 6.2.2 - Configuring Default NGINX File:
+WARNING: {php_version}, {server_domain_or_IP}, {project_name}
+```sh
+server {
+    listen 80;
+    server_name {server_domain_or_IP};
+    root /var/www/{project_name}/public;
+
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-XSS-Protection "1; mode=block";
+    add_header X-Content-Type-Options "nosniff";
+
+    index index.html index.htm index.php;
+
+    charset utf-8;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+
+    error_page 404 /index.php;
+
+    location ~ \.php$ {
+        fastcgi_pass unix:/var/run/php/php{php_version}-fpm.sock;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+
+    location ~ /\.(?!well-known).* {
+        deny all;
+    }
+}
+```
+##### 6.2.3 - Validating default NGINX file
+```sh
+sudo nginx -t
+```
+##### 6.2.4 - Command Exit
+```sh
+Outputnginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+```
+##### 6.2.5 - Restart NGINX
+```sh
+sudo systemctl reload nginx
+```
+#
+##### 6.2.5 - Install Git
 ```sh
 sudo apt install git
 ```
