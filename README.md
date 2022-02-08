@@ -23,7 +23,7 @@ sudo apt upgrade
 #### 1.4 - Install PHP and extension
 ```sh
 sudo apt install php8.1
-sudo apt install php8.1-{mysql,intl,ldap,gd,cli,bz2,curl,mbstring,pgsql,opcache,soap,cgi,xml}
+sudo apt install php8.1-{mysql,intl,ldap,gd,cli,bz2,curl,mbstring,pgsql,opcache,soap,cgi,xml,fpm}
 ```
 #
 ### 02 - Init Composer
