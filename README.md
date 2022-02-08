@@ -1,11 +1,12 @@
 # Installing-in-Deepin
 Passo a Passo de Instalação, para inicio de um novo projeto no Sistema Linux Deepin
-
+#
 ### 01 - Init PHP
 #### 1.1 - Updating System
 ```sh
 sudo apt update
 sudo apt -y upgrade
+sudo reboot
 ```
 #### 1.2 - Install Repository 
 ```sh
@@ -13,7 +14,7 @@ sudo apt install -y software-properties-common
 echo "deb https://packages.sury.org/php/ buster main" | sudo tee /etc/apt/sources.list.d/sury-php.list
 wget -qO - https://packages.sury.org/php/apt.gpg | sudo apt-key add -
 ```
-#### 1.3 Reboot System 
+#### 1.3 - Reboot System 
 ```sh
 sudo reboot 
 sudo apt update
@@ -44,6 +45,7 @@ sudo apt install postgresql postgresql-contrib
 #### 3.2 - Create User
 ```sh
 sudo -i -u postgres
+psql
 CREATE USER nomedousuario SUPERUSER INHERIT CREATEDB CREATEROLE; 
 ALTER USER nomedousuario PASSWORD 'senha';
 ```
@@ -135,41 +137,39 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful
 sudo systemctl reload nginx
 ```
 #
-##### 6.2.5 - Install Git
+### 07 - Init Git
+##### 7.1 - Install Git
 ```sh
 sudo apt install git
 ```
-### Install Git Desktop
-#### To setup the package repository, run these commands:
+#### 7.2 - Configure Git
 ```sh
-wget -qO - https://packagecloud.io/shiftkey/desktop/gpgkey | sudo tee /etc/apt/trusted.gpg.d/shiftkey-desktop.asc > /dev/null
-sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/shiftkey/desktop/any/ any main" > /etc/apt/sources.list.d/packagecloud-shiftkey-desktop.list'
-sudo apt-get update
+git config --global user.name "Fulano de Tal"
+git config --global user.email fulanodetal@exemplo.pt
 ```
-#### Then install GitHub Desktop:
-```sh
-sudo apt install github-desktop
-```
-# Iniciando um Projeto
+#
+________________________________________________________________________________________________________________________
+#
 ### 01 - Init Project Laravel
-#### Local
+#### 1.2 - Composer Create Project
 ```sh
 composer create-project laravel/laravel {nome_projeto}
 ```
 #
 ### 02 - Init Tailwind
+#### 2.1 - Install Tailwind
 ```sh
 npm install -D tailwindcss
 npx tailwindcss init
 ```
-#### 2.1 Install packge for tailwind
+#### 2.2 Install packge for tailwind
 ```sh
 npm install @tailwindcss/line-clamp
 npm install @tailwindcss/aspect-ratio
 npm install @tailwindcss/forms
 npm install -D @tailwindcss/typography
 ```
-#### 2.2 - Configure archive tailwind.config.js
+#### 2.2.1 - Configure archive tailwind.config.js
 ```sh
 module.exports = {
   content: [
@@ -189,14 +189,14 @@ module.exports = {
   ],
 }
 ```
-#### 2.3 - Configure archive app.css in resource
+#### 2.2.2 - Configure archive app.css in resource
 ```sh
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 ```
 #
-### 03 - Configure WireUI
+### 03 - Init WireUI
 #### 3.1 - Install packge WireUI
 ```sh
 composer require wireui/wireui
@@ -212,7 +212,7 @@ composer require wireui/wireui
 </html>
 ```
 #
-### 04 - Configure Livewire
+### 04 - Init Livewire
 #### Install packge Livewire
 ```sh
 composer require livewire/livewire
