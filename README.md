@@ -31,7 +31,7 @@ php -v
 
 ### Install extension
 ```sh
-sudo apt install php8.1-{mysql,intl,ldap,gd,cli,bz2,curl,mbstring,pgsql,opcache,soap,cgi,xml,fpm, zip}
+sudo apt install php8.1-{mysql,intl,ldap,gd,cli,bz2,curl,mbstring,pgsql,opcache,soap,cgi,xml,fpm,zip}
 ```
 
 ### - Init Composer
