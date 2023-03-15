@@ -76,7 +76,7 @@ nvm install-latest-npm
 ```
 #
 ### - Init NGINX
-#### - Install NGINX
+#### - Install NGINX(Lembre de parar o Apache primeiro : systemctl stop apache2.service)
 ```sh
 sudo apt install nginx-full
 ```
