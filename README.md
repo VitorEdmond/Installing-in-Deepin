@@ -83,7 +83,7 @@ sudo apt install nginx-full
 ### - Configure NGINX
 ##### - Acesse o arquivo default em sites enable
 ```sh
-sudo nano /etc/nginx/sites-enable/default
+sudo nano /etc/nginx/sites-enabled/default
 ```
 ##### - Configuring Default NGINX File:
 WARNING: {php_version}, {server_domain_or_IP}, {project_name}
